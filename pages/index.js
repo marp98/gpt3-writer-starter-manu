@@ -57,7 +57,7 @@ const Home = () => {
         <div className="prompt-container">
           <textarea
             className="prompt-box"
-            placeholder="Startups, engineering, working hard, love, death..."
+            placeholder="startups, engineering, artificial intelligence, genetics..."
             value={userInput}
             onChange={onUserChangedText}
           />
@@ -75,11 +75,7 @@ const Home = () => {
           </div>
           {apiOutput && (
             <div className="output">
-              <div className="output-header-container">
-                <div className="output-header">
-                  <h3>Output</h3>
-                </div>
-              </div>
+              <div className="output-header-container"></div>
               <div className="output-content">
                 <p>{apiOutput}</p>
               </div>
