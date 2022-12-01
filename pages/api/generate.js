@@ -7,9 +7,9 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const basePromptPrefix = `
-Write me an answer in the style of Albus Dumbledore, fictional character from the Harry Potter books, for the question below. Make sure to add an inspiring and dramatic ending. 
+Write me a completely new quote from Albus Dumbledore, fictional character from the Harry Potter books using the topic below. It has to be inspirational and dramatic, and related to the topic below.
 
-Question:
+Topic:
 `;
 
 const generateAction = async (req, res) => {
@@ -17,10 +17,10 @@ const generateAction = async (req, res) => {
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
 
   const baseCompletion = await openai.createCompletion({
-    model: "text-davinci-002",
+    model: "text-davinci-003",
     prompt: `${basePromptPrefix}${req.body.userInput}\n`,
-    temperature: 0.75,
-    max_tokens: 150,
+    temperature: 0.85,
+    max_tokens: 300,
   });
 
   const basePromptOutput = baseCompletion.data.choices.pop();

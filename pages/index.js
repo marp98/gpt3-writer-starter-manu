@@ -3,6 +3,7 @@ import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import buildspaceLogo from "../assets/buildspace-logo.png";
+import heroImg from "../assets/hero-img.png";
 
 const Home = () => {
   const [userInput, setUserInput] = useState("");
@@ -38,22 +39,25 @@ const Home = () => {
       <Head>
         <title>GPT-3 Writer | buildspace</title>
       </Head>
+      {/* <div className="img-container">
+        <Image src={heroImg} className="hero-img" alt="hero image" />
+      </div> */}
       <div className="container">
+        <Image src={heroImg} className="hero-img" alt="hero image" />
         <div className="header">
-          <div className="header-title">
+          {/* <div className="header-title">
             <h1>Daily grind with Dumbledore</h1>
-          </div>
+          </div> */}
           <div className="header-subtitle">
             <h2>
-              Input a question about startups or productivity and let Dumbledore
-              inspire you.
+              Input a topic and get an inspiring quote from Albus Dumbledore.
             </h2>
           </div>
         </div>
         <div className="prompt-container">
           <textarea
             className="prompt-box"
-            placeholder="How do I get my first user?"
+            placeholder="Startups, engineering, working hard, love, death..."
             value={userInput}
             onChange={onUserChangedText}
           />
